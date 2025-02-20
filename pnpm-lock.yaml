@@ -42,6 +42,9 @@ importers:
       '@pandacss/dev':
         specifier: latest
         version: 0.53.0(typescript@5.7.3)
+      prettier:
+        specifier: latest
+        version: 3.5.2
       typescript:
         specifier: latest
         version: 5.7.3
@@ -6529,6 +6532,11 @@ packages:
 
   prettier@3.2.5:
     resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
+    engines: {node: '>=14'}
+    hasBin: true
+
+  prettier@3.5.2:
+    resolution: {integrity: sha512-lc6npv5PH7hVqozBR7lkBNOGXV9vMwROAPlumdBkX0wTbbzPu/U1hk5yL8p2pt4Xoc+2mkT8t/sow2YrV/M5qg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -16464,6 +16472,8 @@ snapshots:
   prettier@2.8.8: {}
 
   prettier@3.2.5: {}
+
+  prettier@3.5.2: {}
 
   pretty-error@4.0.0:
     dependencies:

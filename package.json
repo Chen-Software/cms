@@ -30,6 +30,7 @@
     "@docusaurus/tsconfig": "latest",
     "@docusaurus/types": "latest",
     "@pandacss/dev": "latest",
+    "prettier": "latest",
     "typescript": "latest"
   },
   "browserslist": {
