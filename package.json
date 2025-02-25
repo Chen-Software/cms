@@ -5,7 +5,8 @@
   "scripts": {
     "prepare": "panda codegen",
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "tinacms dev -c 'docusaurus start'",
+    "dev": "tinacms dev -c 'docusaurus start'",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -21,7 +22,8 @@
     "@mdx-js/react": "latest",
     "prism-react-renderer": "latest",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "tinacms": "^2.7.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "latest",
