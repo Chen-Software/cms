@@ -1,11 +1,11 @@
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import HomepageFeatures from "@chen/src/components/HomepageFeatures";
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
 
-import { css } from "@site/styled-system/css";
-import { center } from "@site/styled-system/patterns";
+import { css } from "@chen/styled-system/css";
+import { center } from "@chen/styled-system/patterns";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -22,10 +22,7 @@ function HomepageHeader() {
       <div className="container">
         <Heading
           as="h1"
-          className={css({
-            background: "#ff0000",
-            textStyle: "8xl!",
-          })}
+          className={css({ background: "#ff0000", textStyle: "8xl!" })}
         >
           {siteConfig.title}
         </Heading>
