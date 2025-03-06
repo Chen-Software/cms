@@ -1,6 +1,5 @@
 # Dependencies
-node_modules
-.yarn
+/node_modules
 
 # Production
 /build
@@ -20,5 +19,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-tina/__generated__
-.env
+## Panda
+styled-system
+styled-system-studio
