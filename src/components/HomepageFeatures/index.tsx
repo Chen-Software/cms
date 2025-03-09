@@ -45,7 +45,8 @@ const FeatureList: FeatureItem[] = [
 function Feature({ title, Svg, description }: FeatureItem) {
   return h(
     "div",
-    { className: css({ basis: "1/3" }) },
+    // { className: css({ basis: "1/3" }) },
+    {},
     h("div", { className: "text--center" }, h(Svg, { role: "img" })),
     h(
       "div",
