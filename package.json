@@ -20,6 +20,7 @@
     "@docusaurus/core": "latest",
     "@docusaurus/preset-classic": "latest",
     "@mdx-js/react": "latest",
+    "phy": "^4.2.7",
     "preact": "^10.26.4",
     "preact-render-to-string": "^6.5.13",
     "prism-react-renderer": "latest",
