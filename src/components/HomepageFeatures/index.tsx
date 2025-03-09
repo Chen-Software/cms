@@ -1,3 +1,4 @@
+import { createElement as h } from "react";
 import Heading from "@theme/Heading";
 
 import { css } from "@site/styled-system/css";
@@ -42,37 +43,35 @@ const FeatureList: FeatureItem[] = [
 ];
 
 function Feature({ title, Svg, description }: FeatureItem) {
-  return (
-    <div className={css({ basis: "1/3" })}>
-      <div className="text--center">
-        <Svg role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
+  return h(
+    "div",
+    { className: css({ basis: "1/3" }) },
+    h("div", { className: "text--center" }, h(Svg, { role: "img" })),
+    h(
+      "div",
+      { className: "text--center padding-horiz--md" },
+      h(Heading, { as: "h3" }, title),
+      h("p", {}, description),
+    ),
   );
 }
 
 export default function HomepageFeatures(): JSX.Element {
-  return (
-    <section>
-      <div className="container">
-        <div
-          className={css({
+  return h("section", {}, [
+    h("div", { className: "container" }, [
+      h(
+        "div",
+        {
+          className: css({
             display: "flex",
             flex: "auto",
             flexDirection: "column",
             flexWrap: "wrap",
             justifyContent: "space-between",
-          })}
-        >
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+          }),
+        },
+        FeatureList.map((props, idx) => h(Feature, { key: idx, ...props })),
+      ),
+    ]),
+  ]);
 }
