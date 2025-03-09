@@ -1,4 +1,5 @@
-import React from "react";
+import { h } from "preact";
+import { useMemo } from "preact/compat";
 import { defineConfig, TextField } from "tinacms";
 import { ReferenceField } from "tinacms";
 import title from "title";
@@ -8,7 +9,7 @@ import { docusaurusDate, titleFromSlug } from "../utils/cms-formatter";
 const branch = process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
 
 const WarningIcon = (props) => {
-  return React.createElement(
+  return h(
     "svg",
     {
       stroke: "currentColor",
@@ -20,7 +21,7 @@ const WarningIcon = (props) => {
       xmlns: "http://www.w3.org/2000/svg",
       ...props,
     },
-    React.createElement("path", {
+    h("path", {
       d: "M13.768 4.2C13.42 3.545 12.742 3.138 12 3.138s-1.42.407-1.768 1.063L2.894 18.064a1.986 1.986 0 0 0 .054 1.968A1.984 1.984 0 0 0 4.661 21h14.678c.708 0 1.349-.362 1.714-.968a1.989 1.989 0 0 0 .054-1.968L13.768 4.2zM4.661 19 12 5.137 19.344 19H4.661z",
     }),
   );
@@ -41,23 +42,23 @@ const WarningIcon = (props) => {
 // );
 
 const RestartWarning = () => {
-  return React.createElement(
+  return h(
     "p",
     {
       className:
         "rounded-lg border shadow px-4 py-2.5 bg-gradient-to-r from-yellow-50 to-yellow-100 border-yellow-200 mb-4",
     },
-    React.createElement(
+    h(
       "div",
       { className: "flex items-center gap-2" },
-      React.createElement(WarningIcon, {
+      h(WarningIcon, {
         className: `w-6 h-auto flex-shrink-0 text-yellow-400`,
       }),
-      React.createElement(
+      h(
         "div",
         { className: `flex-1 text-sm text-yellow-700 whitespace-normal	` },
         "To see settings changes reflected on your site, restart the Tina CLI after saving",
-        React.createElement("em", null, "(local development only)"),
+        h("em", null, "(local development only)"),
         ".",
       ),
     ),
@@ -258,7 +259,7 @@ const CategoryFields = [
     collections: ["doc"],
     ui: {
       component: (props) => {
-        const link = React.useMemo(() => {
+        const link = useMemo(() => {
           let fieldName = props.field.name;
           fieldName =
             fieldName.substring(0, fieldName.lastIndexOf(".")) || fieldName;
@@ -393,7 +394,7 @@ const NavbarItemFields = [
     collections: ["doc"],
     ui: {
       component: (props) => {
-        const link = React.useMemo(() => {
+        const link = useMemo(() => {
           let fieldName = props.field.name;
           fieldName =
             fieldName.substring(0, fieldName.lastIndexOf(".")) || fieldName;
@@ -418,7 +419,7 @@ const NavbarItemFields = [
     collections: ["pages"],
     ui: {
       component: (props) => {
-        const link = React.useMemo(() => {
+        const link = useMemo(() => {
           let fieldName = props.field.name;
           fieldName =
             fieldName.substring(0, fieldName.lastIndexOf(".")) || fieldName;
@@ -442,7 +443,7 @@ const NavbarItemFields = [
     type: "string",
     ui: {
       component: (props) => {
-        const link = React.useMemo(() => {
+        const link = useMemo(() => {
           let fieldName = props.field.name;
           fieldName =
             fieldName.substring(0, fieldName.lastIndexOf(".")) || fieldName;
