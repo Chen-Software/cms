@@ -69,6 +69,8 @@ export default function HomepageFeatures(): JSX.Element {
             flexDirection: "column",
             flexWrap: "wrap",
             justifyContent: "space-between",
+            flexBasis: "max(0px, (400px - 100vw)*1000)",
+            flexGrow: 1,
           }),
         },
         FeatureList.map((props, idx) => h(Feature, { key: idx, ...props })),
